@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voice Attendance Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <h1>Student Attendance by Voice</h1>
+      <p>Call out roll number and student name to mark attendance automatically.</p>
+    </header>
+
+    <section class="controls">
+      <button id="startBtn">Start Listening</button>
+      <button id="stopBtn" disabled>Stop Listening</button>
+      <button id="autoAbsentBtn">Auto-fill Absentees</button>
+      <button id="resetBtn">Reset Attendance</button>
+    </section>
+
+    <section class="status-panel">
+      <div class="status-card">
+        <strong>Detected phrase</strong>
+        <p id="detectedPhrase">No voice input yet.</p>
+      </div>
+      <div class="status-card">
+        <strong>Summary</strong>
+        <p><span id="presentCount">0</span> Present</p>
+        <p><span id="absentCount">0</span> Absent</p>
+        <p><span id="unmarkedCount">0</span> Unmarked</p>
+      </div>
+    </section>
+
+    <section class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Roll</th>
+            <th>Name</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="studentTable"></tbody>
+      </table>
+    </section>
+
+    <footer>
+      <small>Works best on Chrome or Edge with microphone access enabled.</small>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
